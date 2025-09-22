@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventra App - Sistem Penjualan Tiket Wisata</title>
+    <title>Ventra Pass - Sistem Penjualan Tiket Wisata</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -428,86 +428,6 @@
             gap: 10px;
         }
         /* == END: Fitur Hak Akses == */
-
-        /* == START: Gaya Notifikasi Premium == */
-        #premiumNotificationModal .modal-content {
-            background: linear-gradient(135deg, var(--dark-color) 0%, #434343 100%);
-            color: white;
-            border-radius: 15px;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        #premiumNotificationModal .modal-body {
-            padding: 40px;
-            text-align: center;
-        }
-        #premiumNotificationModal .icon {
-            font-size: 50px;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            text-shadow: 0 0 15px var(--accent-color);
-        }
-        #premiumNotificationModal h3 {
-            font-weight: 700;
-            color: #fff;
-        }
-        #premiumNotificationModal p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 30px;
-        }
-        #premiumNotificationModal .btn {
-            border-radius: 50px;
-            padding: 12px 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        #premiumNotificationModal .btn-premium {
-            background: linear-gradient(45deg, var(--accent-color), var(--tertiary-color));
-            color: white;
-            border: none;
-            box-shadow: 0 4px 15px rgba(240, 101, 149, 0.4);
-        }
-        #premiumNotificationModal .btn-premium:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(240, 101, 149, 0.6);
-        }
-        #premiumNotificationModal .btn-outline-light {
-             border-width: 2px;
-        }
-        #premiumNotificationModal .btn-outline-light:hover {
-            background-color: white;
-            color: var(--dark-color);
-        }
-        /* == END: Gaya Notifikasi Premium == */
-
-        /* == START: Gaya Captcha == */
-        #captcha-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        #captcha-display {
-            padding: 10px 20px;
-            background-color: #e9ecef;
-            border-radius: 8px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 5px;
-            text-decoration: line-through;
-            text-decoration-color: var(--secondary-color);
-            user-select: none;
-            color: var(--dark-color);
-            border: 2px dashed #ccc;
-        }
-        #refreshCaptchaBtn {
-            font-size: 1.5rem;
-        }
-        /* == END: Gaya Captcha == */
     </style>
 </head>
 <body>
@@ -521,7 +441,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark mb-4 no-print">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-gem me-2"></i>Ventra App
+                <i class="fas fa-gem me-2"></i>Ventra Pass
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -1208,7 +1128,7 @@
                                 <div class="mb-3 d-none">
                                     <label class="form-label">Logo</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="venueLogo" placeholder="URL Logo" value="https://raw.githubusercontent.com/LKS-88/wisata/refs/heads/main/logo-wisata.png">
+                                        <input type="text" class="form-control" id="venueLogo" placeholder="URL Logo" value="https://raw.githubusercontent.com/LKS-88/anekamarket/refs/heads/main/Logo-Anekamarketku.png">
                                         <button class="btn btn-outline-secondary" type="button" id="updateLogoBtn">
                                             <i class="fas fa-sync-alt"></i> Update
                                         </button>
@@ -1305,14 +1225,14 @@
                                     <h5 class="card-title mb-0"><i class="fas fa-database me-2"></i>Backup Data</h5>
                                 </div>
                                 <div class="card-body">
-                                    <p>Backup semua data sistem termasuk tiket, transaksi, pengguna, dan pengaturan.</p>
+                                    <p>Backup semua data sistem. File akan dienkripsi untuk keamanan. Gunakan password opsional untuk enkripsi yang lebih kuat.</p>
                                     <div class="mb-3">
                                         <label for="backupFileName" class="form-label">Nama File Backup</label>
-                                        <input type="text" class="form-control" id="backupFileName" value="VentraApp_Backup">
+                                        <input type="text" class="form-control" id="backupFileName" value="VentraPass_Backup">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="backupPassword" class="form-label">Password (Opsional)</label>
-                                        <input type="password" class="form-control" id="backupPassword" placeholder="Masukkan password untuk enkripsi">
+                                        <label for="backupPassword" class="form-label">Password Enkripsi (Opsional)</label>
+                                        <input type="password" class="form-control" id="backupPassword" placeholder="Biarkan kosong untuk default">
                                     </div>
                                     <button type="button" class="btn btn-primary" id="createBackupBtn">
                                         <i class="fas fa-download me-2"></i>Buat Backup
@@ -1332,8 +1252,8 @@
                                         <input type="file" class="form-control" id="restoreFile" accept=".json,.txt">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="restorePassword" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="restorePassword" placeholder="Masukkan password jika file dienkripsi">
+                                        <label for="restorePassword" class="form-label">Password Enkripsi</label>
+                                        <input type="password" class="form-control" id="restorePassword" placeholder="Masukkan password jika digunakan">
                                     </div>
                                     <button type="button" class="btn btn-warning" id="restoreDataBtn">
                                         <i class="fas fa-upload me-2"></i>Restore Data
@@ -1370,7 +1290,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="mb-1">Ventra App &copy; 2025 dikembangkan oleh <strong>Lentera Karya Situbondo</strong>.</p>
+                    <p class="mb-1">Ventra Pass &copy; 2025 dikembangkan oleh <strong>Lentera Karya Situbondo</strong>.</p>
                     <p class="mb-0">
                         <a href="https://www.anekamarket.my.id" target="_blank"><i class="fas fa-globe me-1"></i>www.anekamarket.my.id</a> | 
                         <a href="https://wa.me/6287865614222" target="_blank"><i class="fab fa-whatsapp me-1"></i>0878-6561-4222</a>
@@ -1605,7 +1525,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        <i class="fas fa-gem me-2"></i>Ventra App - Login
+                        <i class="fas fa-gem me-2"></i>Ventra Pass - Login
                     </h5>
                 </div>
                 <div class="modal-body">
@@ -1636,61 +1556,6 @@
             </div>
         </div>
     </div>
-
-    <!-- START: MODAL NOTIFIKASI PREMIUM BARU -->
-    <div class="modal fade" id="premiumNotificationModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="icon"><i class="fas fa-crown"></i></div>
-                    <h3>Tingkatkan ke Versi Premium!</h3>
-                    <p>Buka semua fitur canggih dan dapatkan dukungan penuh dari developer untuk pengalaman terbaik menggunakan Ventra App.</p>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-premium" id="getPremiumBtn">
-                            <i class="fab fa-whatsapp me-2"></i>Hubungi Developer Sekarang
-                        </button>
-                        <button class="btn btn-outline-light" id="otherAppsBtn">
-                            <i class="fas fa-shopping-bag me-2"></i>Cek Aplikasi Lainnya
-                        </button>
-                    </div>
-                    <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
-                    <button class="btn btn-link text-white-50" id="tryFreeBtn">
-                        Lanjutkan dengan Versi Gratis
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END: MODAL NOTIFIKASI PREMIUM BARU -->
-
-    <!-- START: MODAL CAPTCHA BARU -->
-    <div class="modal fade" id="captchaModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Verifikasi Keamanan</h5>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="text-muted">Untuk melanjutkan, masukkan kode captcha di bawah ini dengan benar.</p>
-                    <form id="captchaForm">
-                        <div id="captcha-container">
-                            <div id="captcha-display"></div>
-                            <button type="button" class="btn btn-link text-secondary" id="refreshCaptchaBtn" title="Ganti Kode">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control form-control-lg text-center" id="captchaInput" placeholder="Masukkan kode di sini" required autocomplete="off" maxlength="6">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                           Verifikasi & Login
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END: MODAL CAPTCHA BARU -->
     
     <div class="modal fade" id="confirmationModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -1710,7 +1575,7 @@
         </div>
     </div>
     
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1150">
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
         <div id="alertToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <strong class="me-auto" id="toastTitle">Notifikasi</strong>
@@ -1750,8 +1615,6 @@
                 this.cart = [];
                 this.salesChart = null; // To keep track of the sales chart instance
                 this.reportData = {}; // To store generated report data
-                this.pendingLogin = null; // To hold user data during captcha verification
-                this.currentCaptcha = ''; // To hold the current captcha string
 
                 // Initialize data if not exists
                 this.initData();
@@ -1781,10 +1644,10 @@
                 if (!localStorage.getItem('ticketSalesData')) {
                     const initialData = {
                         settings: {
-                            venueName: 'KAMPUNGKERAPU',
-                            venueLocation: 'Jl.Raya Gundil Desa klatakan Kecamatan Kendit, Situbondo - Jawa Timur',
+                            venueName: 'Tempat Wisata Contoh',
+                            venueLocation: 'Jl. Contoh No. 123, Kota Contoh',
                             venueDescription: 'Tempat wisata keluarga dengan berbagai wahana menarik',
-                            venueLogo: 'https://raw.githubusercontent.com/LKS-88/wisata/refs/heads/main/logo-wisata.png',
+                            venueLogo: 'https://raw.githubusercontent.com/LKS-88/anekamarket/refs/heads/main/Logo-Anekamarketku.png',
                             venueWhatsapp: '0878-6561-4222',
                             venueWebsite: 'www.anekamarket.my.id',
                             venueEmail: 'admin@anekamarket.my.id',
@@ -1795,7 +1658,7 @@
                             taxRate: 10,
                             taxName: 'PPN',
                             enableReceiptFooter: true,
-                            receiptFooterText: 'Terima Kasih Telah Berkunjung Di Wisata Kampung Kerapu Situbondo'
+                            receiptFooterText: 'Terima kasih telah berkunjung!'
                         },
                         users: [
                             {
@@ -2031,7 +1894,11 @@
                 document.getElementById('printAllGeneratedTicketsBtn').addEventListener('click', () => this.printAllGeneratedTickets());
                 document.getElementById('addSelectedToCartBtn').addEventListener('click', () => this.addSelectedToCart());
                 document.getElementById('cancelTransactionBtn').addEventListener('click', () => this.cancelTransaction());
-                document.getElementById('createBackupBtn').addEventListener('click', () => this.createBackup());
+                
+                // == START: PENYEMPURNAAN BACKUP & RESTORE ==
+                document.getElementById('createBackupBtn').addEventListener('click', () => this.triggerBackupDownload(false));
+                // == END: PENYEMPURNAAN BACKUP & RESTORE ==
+                
                 document.getElementById('restoreDataBtn').addEventListener('click', () => this.restoreData());
                 document.getElementById('resetSystemBtn').addEventListener('click', () => this.resetSystem());
                 document.getElementById('generateReportBtn').addEventListener('click', () => this.generateReport());
@@ -2039,16 +1906,15 @@
                 document.getElementById('exportReportBtn').addEventListener('click', () => this.exportReportPDF());
                 document.getElementById('printReportBtn').addEventListener('click', () => this.printReport());
                 
-                // == START: Event Listener untuk Proteksi Password Tambah Pengguna ==
+                // Event Listener untuk Proteksi Password Tambah Pengguna
                 document.getElementById('addUserBtn').addEventListener('click', () => {
                     this.promptForAdminPassword(() => {
                         const addUserModal = bootstrap.Modal.getOrCreateInstance(document.getElementById('addUserModal'));
                         addUserModal.show();
                     });
                 });
-                // == END: Event Listener untuk Proteksi Password Tambah Pengguna ==
 
-                // == START: Event Listener untuk Hak Akses ==
+                // Event Listener untuk Hak Akses
                 document.getElementById('newUserRole').addEventListener('change', (e) => {
                     const permissionsContainer = document.getElementById('newUserPermissionsContainer');
                     permissionsContainer.style.display = e.target.value === 'admin' ? 'none' : 'block';
@@ -2058,7 +1924,6 @@
                     const permissionsContainer = document.getElementById('editUserPermissionsContainer');
                     permissionsContainer.style.display = e.target.value === 'admin' ? 'none' : 'block';
                 });
-                // == END: Event Listener untuk Hak Akses ==
 
                 document.getElementById('stockTableBody').addEventListener('click', (e) => {
                     const viewBtn = e.target.closest('.view-ticket-btn');
@@ -2080,13 +1945,11 @@
                 document.getElementById('usersTableBody').addEventListener('click', (e) => {
                     const editBtn = e.target.closest('.edit-user-btn');
                     const deleteBtn = e.target.closest('.delete-user-btn');
-                    // == START: Perbaikan Proteksi Password Edit Pengguna ==
                     if(editBtn) {
                         this.promptForAdminPassword(() => {
                             this.openEditUserModal(editBtn.dataset.id);
                         });
                     }
-                    // == END: Perbaikan Proteksi Password Edit Pengguna ==
                     if(deleteBtn) this.deleteUser(deleteBtn.dataset.id);
                 });
 
@@ -2136,32 +1999,13 @@
                 document.getElementById('deleteExpiredBtn').addEventListener('click', () => this.deleteExpiredTickets());
                 document.getElementById('deleteSoldBtn').addEventListener('click', () => this.deleteSoldTickets());
 
-                // == START: Event Listener untuk Notifikasi & Captcha ==
-                document.getElementById('getPremiumBtn').addEventListener('click', this.handleGetPremium);
-                document.getElementById('otherAppsBtn').addEventListener('click', () => window.open('https://www.anekamarket.my.id', '_blank'));
-                document.getElementById('tryFreeBtn').addEventListener('click', () => this.showCaptchaModal());
-                document.getElementById('captchaForm').addEventListener('submit', (e) => { e.preventDefault(); this.verifyCaptcha(); });
-                document.getElementById('refreshCaptchaBtn').addEventListener('click', () => this.generateCaptcha());
-                // == END: Event Listener untuk Notifikasi & Captcha ==
-            }
-
-            // --- FUNGSI BARU UNTUK ALUR LOGIN ---
-
-            proceedToApp(user, rememberMe) {
-                user.lastLogin = new Date().toISOString();
-                this.saveData();
-                this.currentUser = user;
-
-                if (rememberMe) {
-                    localStorage.setItem('loggedInUser', JSON.stringify(user));
-                } else {
-                    sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-                }
-
-                this.updateUIAfterLogin();
-                this.addActivity(`User ${user.username} logged in`);
-                this.showToast('Login Berhasil', `Selamat datang, ${user.fullName || user.username}!`, 'success');
-                this.showSection('dashboardSection');
+                // == START: PENAMBAHAN FITUR AUTO BACKUP ON REFRESH ==
+                window.addEventListener('beforeunload', () => {
+                    if (this.currentUser) {
+                        this.triggerBackupDownload(true);
+                    }
+                });
+                // == END: PENAMBAHAN FITUR AUTO BACKUP ON REFRESH ==
             }
 
             handleLogin() {
@@ -2177,84 +2021,34 @@
                         return;
                     }
 
-                    // Simpan data login sementara untuk digunakan setelah verifikasi captcha
-                    this.pendingLogin = { user, rememberMe }; 
+                    user.lastLogin = new Date().toISOString();
+                    this.saveData();
+                    this.currentUser = user;
 
-                    const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                    if (loginModal) loginModal.hide();
-
-                    // Cek apakah notifikasi sudah pernah ditampilkan
-                    if (!localStorage.getItem('hasSeenVentraAppNotice')) {
-                        const premiumModal = new bootstrap.Modal(document.getElementById('premiumNotificationModal'));
-                        premiumModal.show();
+                    if (rememberMe) {
+                        localStorage.setItem('loggedInUser', JSON.stringify(user));
                     } else {
-                        // Jika sudah, langsung masuk ke aplikasi
-                        this.proceedToApp(user, rememberMe);
+                        sessionStorage.setItem('loggedInUser', JSON.stringify(user));
                     }
+
+                    this.updateUIAfterLogin();
+                    this.addActivity(`User ${user.username} logged in`);
+                    this.showToast('Login Berhasil', `Selamat datang, ${user.fullName || user.username}!`, 'success');
+                    this.showSection('dashboardSection');
                 } else {
                     this.showToast('Login Gagal', 'Username atau password salah.', 'danger');
                 }
             }
 
-            handleGetPremium() {
-                const phoneNumber = '6287865614222';
-                const message = `Halo Admin, saya tertarik dengan Ventra App. Mohon informasinya mengenai cara untuk mendapatkan dan menikmati fitur versi premiumnya. Terima kasih.`;
-                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-                window.open(url, '_blank');
-            }
-
-            showCaptchaModal() {
-                const premiumModal = bootstrap.Modal.getInstance(document.getElementById('premiumNotificationModal'));
-                if (premiumModal) premiumModal.hide();
-
-                const captchaModal = new bootstrap.Modal(document.getElementById('captchaModal'));
-                captchaModal.show();
-                this.generateCaptcha();
-                // Fokus pada input setelah modal muncul
-                document.getElementById('captchaModal').addEventListener('shown.bs.modal', () => {
-                     document.getElementById('captchaInput').focus();
-                });
-            }
-
-            generateCaptcha() {
-                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                let captcha = '';
-                for (let i = 0; i < 6; i++) {
-                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-                this.currentCaptcha = captcha;
-                document.getElementById('captcha-display').textContent = this.currentCaptcha;
-            }
-
-            verifyCaptcha() {
-                const userInput = document.getElementById('captchaInput').value;
-                if (userInput && userInput.toLowerCase() === this.currentCaptcha.toLowerCase()) {
-                    // Tandai bahwa pengguna telah melihat notifikasi dan menyelesaikan captcha
-                    localStorage.setItem('hasSeenVentraAppNotice', 'true');
-                    
-                    const captchaModal = bootstrap.Modal.getInstance(document.getElementById('captchaModal'));
-                    if(captchaModal) captchaModal.hide();
-
-                    // Lanjutkan ke aplikasi dengan data login yang tersimpan
-                    if (this.pendingLogin) {
-                        this.proceedToApp(this.pendingLogin.user, this.pendingLogin.rememberMe);
-                        this.pendingLogin = null; // Hapus data sementara
-                    }
-                } else {
-                    this.showToast('Error', 'Kode Captcha salah. Coba lagi.', 'danger');
-                    document.getElementById('captchaInput').value = '';
-                    this.generateCaptcha();
-                }
-            }
-            
-            // --- AKHIR FUNGSI BARU UNTUK ALUR LOGIN ---
-
             handleLogout() {
+                // == START: PENAMBAHAN FITUR AUTO BACKUP ON LOGOUT ==
+                this.triggerBackupDownload(true);
+                // == END: PENAMBAHAN FITUR AUTO BACKUP ON LOGOUT ==
+
                 const user = this.currentUser;
                 this.addActivity(`User ${user.username} logged out`);
 
                 this.currentUser = null;
-                this.pendingLogin = null;
                 sessionStorage.removeItem('loggedInUser');
                 localStorage.removeItem('loggedInUser');
 
@@ -2333,11 +2127,10 @@
 
                 container.appendChild(wrapper);
                 
-                // START: Generate QR Codes after HTML is in DOM
+                // Generate QR Codes after HTML is in DOM
                 tickets.forEach(ticket => {
                     this.generateQRCodeForTicket(ticket);
                 });
-                // END: Generate QR Codes
                 
                 document.getElementById('generatedTicketsCard').style.display = 'block';
             }
@@ -2634,10 +2427,8 @@
             }
             
             generateReceiptHTML(transaction) {
-                 // == START: PENYEMPURNAAN NAMA KASIR DI STRUK ==
                  const cashierUser = this.users.find(u => u.username === transaction.cashier);
                  const cashierName = cashierUser ? cashierUser.fullName : transaction.cashier;
-                 // == END: PENYEMPURNAAN NAMA KASIR DI STRUK ==
 
                  const contactInfo = [
                     this.settings.venueWhatsapp ? `WA: ${this.settings.venueWhatsapp}` : '',
@@ -2649,7 +2440,7 @@
                     <div class="receipt-container">
                         <div class="receipt-header">
                             <img src="${this.settings.venueLogo || ''}" class="receipt-logo" alt="Logo">
-                            <p class="receipt-title">${this.settings.venueName || 'Ventra App'}</p>
+                            <p class="receipt-title">${this.settings.venueName || 'Ventra Pass'}</p>
                             <p class="receipt-subtitle">${this.settings.venueLocation || ''}</p>
                         </div>
                         <div class="receipt-divider"></div>
@@ -2850,20 +2641,18 @@
                     this.showToast('Error', 'Username sudah digunakan.', 'danger'); return;
                 }
 
-                // == START: Simpan Hak Akses ==
                 const permissions = {};
                 if (role !== 'admin') {
                     document.querySelectorAll('#newUserPermissionsContainer .form-check-input').forEach(checkbox => {
                         permissions[checkbox.value] = checkbox.checked;
                     });
                 }
-                // == END: Simpan Hak Akses ==
 
                 const newUser = {
                     id: this.generateId(),
                     username, password: this.hashPassword(password), fullName, role,
                     status: 'active', lastLogin: null, createdAt: new Date().toISOString(),
-                    permissions // Add permissions object
+                    permissions
                 };
                 this.users.push(newUser);
                 this.saveData();
@@ -2887,14 +2676,12 @@
                 document.getElementById('editUserStatus').value = user.status;
                 document.getElementById('editUserPassword').value = '';
 
-                // == START: Muat dan Tampilkan Hak Akses ==
                 const permissionsContainer = document.getElementById('editUserPermissionsContainer');
                 permissionsContainer.style.display = user.role === 'admin' ? 'none' : 'block';
                 
                 document.querySelectorAll('#editUserPermissionsContainer .form-check-input').forEach(checkbox => {
                     checkbox.checked = user.permissions && user.permissions[checkbox.value];
                 });
-                // == END: Muat dan Tampilkan Hak Akses ==
 
                 document.getElementById('editUserRole').disabled = (user.username === 'admin');
                 bootstrap.Modal.getOrCreateInstance(document.getElementById('editUserModal')).show();
@@ -2914,7 +2701,6 @@
                 this.users[userIndex].role = newRole;
                 this.users[userIndex].status = document.getElementById('editUserStatus').value;
                 
-                // == START: Update Hak Akses ==
                 const permissions = {};
                 if (newRole !== 'admin') {
                     document.querySelectorAll('#editUserPermissionsContainer .form-check-input').forEach(checkbox => {
@@ -2922,7 +2708,6 @@
                     });
                 }
                 this.users[userIndex].permissions = permissions;
-                // == END: Update Hak Akses ==
 
                 const newPassword = document.getElementById('editUserPassword').value;
                 if (newPassword) {
@@ -3010,43 +2795,124 @@
                 this.showToast('Sukses', 'Pengaturan sistem disimpan.', 'success');
             }
 
-            createBackup() {
-                if (this.currentUser.role !== 'admin') return;
-                const fileName = document.getElementById('backupFileName').value || 'VentraApp_Backup';
-                const dataStr = JSON.stringify(JSON.parse(localStorage.getItem('ticketSalesData')));
-                
-                const blob = new Blob([dataStr], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `${fileName}_${new Date().toISOString().split('T')[0]}.json`;
-                a.click();
-                URL.revokeObjectURL(url);
-
-                this.addActivity('Created a system backup');
-                this.showToast('Sukses', 'Backup berhasil diunduh.', 'success');
+            // == START: FUNGSI BARU UNTUK ENKRIPSI & DEKRIPSI BACKUP ==
+            _getSecretKey(userProvidedKey = '') {
+                return userProvidedKey || 'V3ntr4P4ss_LKS-Situbondo-Jatim_2025!@#';
             }
+
+            encryptData(dataObject, password = '') {
+                try {
+                    const key = this._getSecretKey(password);
+                    const jsonString = JSON.stringify(dataObject);
+                    // Handle UTF-8 characters correctly before encoding to Base64
+                    const base64String = btoa(unescape(encodeURIComponent(jsonString)));
+                    let encrypted = '';
+                    for (let i = 0; i < base64String.length; i++) {
+                        encrypted += String.fromCharCode(base64String.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+                    }
+                    return encrypted;
+                } catch (e) {
+                    console.error("Encryption failed:", e);
+                    return null;
+                }
+            }
+
+            decryptData(encryptedString, password = '') {
+                try {
+                    const key = this._getSecretKey(password);
+                    let decryptedBase64 = '';
+                    for (let i = 0; i < encryptedString.length; i++) {
+                        decryptedBase64 += String.fromCharCode(encryptedString.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+                    }
+                    // Decode from Base64 and handle UTF-8 characters correctly
+                    const jsonString = decodeURIComponent(escape(atob(decryptedBase64)));
+                    return JSON.parse(jsonString);
+                } catch (e) {
+                    console.error("Decryption failed. This could be due to a wrong password or corrupted file.", e);
+                    return null;
+                }
+            }
+            // == END: FUNGSI BARU UNTUK ENKRIPSI & DEKRIPSI BACKUP ==
+
+            // == START: FUNGSI BARU UNTUK AUTO & MANUAL BACKUP ==
+            _generateBackupFileName() {
+                const now = new Date();
+                const date = now.toLocaleDateString('id-ID', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-');
+                const time = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\./g, '_');
+                return `VentraPass_AutoBackup_${date}_${time}.json`;
+            }
+
+            triggerBackupDownload(isAuto = false) {
+                if (!this.currentUser) return;
+
+                const password = isAuto ? '' : document.getElementById('backupPassword').value;
+                const fileNameInput = document.getElementById('backupFileName').value || 'VentraPass_Backup';
+                const fileName = isAuto ? this._generateBackupFileName() : `${fileNameInput}.json`;
+                
+                try {
+                    const dataToBackup = JSON.parse(localStorage.getItem('ticketSalesData'));
+                    if(!dataToBackup) throw new Error("No data found in localStorage to back up.");
+
+                    const encryptedData = this.encryptData(dataToBackup, password);
+                    if (!encryptedData) throw new Error("Failed to encrypt backup data.");
+                    
+                    const blob = new Blob([encryptedData], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    a.remove();
+                    
+                    if (!isAuto) {
+                        this.addActivity('Created a manual system backup');
+                        this.showToast('Sukses', 'Backup berhasil diunduh.', 'success');
+                    }
+                } catch (e) {
+                    console.error('Backup failed:', e);
+                    if(!isAuto) this.showToast('Error', 'Proses backup gagal.', 'danger');
+                }
+            }
+            // == END: FUNGSI BARU UNTUK AUTO & MANUAL BACKUP ==
 
             restoreData() {
                 if (this.currentUser.role !== 'admin') return;
                 const fileInput = document.getElementById('restoreFile');
+                const password = document.getElementById('restorePassword').value;
+
                 if (!fileInput.files.length) {
                     this.showToast('Error', 'Pilih file backup terlebih dahulu.', 'danger'); return;
                 }
                 const file = fileInput.files[0];
                 const reader = new FileReader();
                 reader.onload = (e) => {
+                    const fileContent = e.target.result;
                     try {
-                        const data = JSON.parse(e.target.result);
-                        if (!data.settings || !data.users || !data.tickets || !data.transactions) throw new Error();
+                        let data;
+                        // First, try to parse as plain JSON for backward compatibility
+                        try {
+                            data = JSON.parse(fileContent);
+                        } catch (jsonError) {
+                            // If it fails, assume it's encrypted and try to decrypt
+                            data = this.decryptData(fileContent, password);
+                        }
+
+                        if (!data || !data.settings || !data.users || !data.tickets) {
+                             throw new Error('Invalid or corrupted backup file structure.');
+                        }
                         
                         this.showConfirmation('Restore Data', 'Ini akan menimpa semua data saat ini. Lanjutkan?', () => {
                             localStorage.setItem('ticketSalesData', JSON.stringify(data));
                             this.addActivity('Restored system from backup');
                             this.showToast('Sukses', 'Data berhasil direstore. Harap logout dan login kembali.', 'success');
+                            setTimeout(() => this.handleLogout(), 2000);
                         });
-                    } catch {
-                        this.showToast('Error', 'File backup tidak valid atau rusak.', 'danger');
+                    } catch(err) {
+                        console.error("Restore failed:", err);
+                        this.showToast('Error', 'File backup tidak valid, rusak, atau password salah.', 'danger');
                     }
                 };
                 reader.readAsText(file);
@@ -3197,7 +3063,6 @@
             formatDate(dateStr) { 
                 if (!dateStr) return '-';
                 const date = new Date(dateStr);
-                // Adjust for timezone offset to prevent date from shifting
                 const userTimezoneOffset = date.getTimezoneOffset() * 60000;
                 const correctedDate = new Date(date.getTime() + userTimezoneOffset);
                 return correctedDate.toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric'});
@@ -3222,40 +3087,36 @@
             formatPaymentMethod(method) { return { cash: 'Tunai', debit: 'Kartu Debit', credit: 'Kartu Kredit', transfer: 'Transfer Bank', ewallet: 'E-Wallet' }[method] || method; }
             formatUserRole(role) { return { admin: 'Admin', cashier: 'Kasir', manager: 'Manager' }[role] || role; }
 
-            // == START: Perbaikan Proteksi Password (Fungsi Baru) ==
+            // == START: PERBAIKAN FUNGSI PROTEKSI PASSWORD ADMIN ==
             promptForAdminPassword(onSuccess) {
                 if (this.currentUser.role !== 'admin') {
                     this.showToast('Akses Ditolak', 'Fitur ini hanya untuk Administrator.', 'danger');
                     return;
                 }
-                const password = prompt("Masukkan password admin untuk melanjutkan:");
-                if (password === "LKS.1945") {
+                const password = prompt("Masukkan password admin Anda untuk melanjutkan:");
+                if (password && this.hashPassword(password) === this.currentUser.password) {
                     onSuccess();
-                } else if (password !== null) { // Hanya tampilkan error jika user salah input, bukan saat klik cancel
+                } else if (password !== null) { 
                     this.showToast('Akses Ditolak', 'Password yang Anda masukkan salah.', 'danger');
                 }
             }
-            // == END: Perbaikan Proteksi Password (Fungsi Baru) ==
+            // == END: PERBAIKAN FUNGSI PROTEKSI PASSWORD ADMIN ==
             
-            // START: Fungsi baru untuk generate QR Code
             generateQRCodeForTicket(ticket) {
-                // Timeout untuk memastikan elemen sudah ada di dalam DOM
                 setTimeout(() => {
                     const qrElement = document.getElementById(`qr-${ticket.id}`);
                     if (qrElement) {
-                        qrElement.innerHTML = ''; // Hapus QR code sebelumnya jika ada
+                        qrElement.innerHTML = '';
                         new QRCode(qrElement, {
                             text: ticket.code,
-                            width: 72, // Sekitar 18mm
+                            width: 72,
                             height: 72,
-                            correctLevel: QRCode.CorrectLevel.H // Toleransi error yang tinggi
+                            correctLevel: QRCode.CorrectLevel.H
                         });
                     }
                 }, 0);
             }
-            // END: Fungsi baru untuk generate QR Code
             
-            // == START: FUNGSI DIPERBARUI - Perbaikan Tampilan Tiket Sesuai Desain Baru ==
             generateTicketHTML(ticket) {
                 const expiryInfo = ticket.expiryDate ? `Berlaku s/d: <strong>${this.formatDate(ticket.expiryDate)}</strong>` : 'Berlaku Selamanya';
                 const venueNameShort = this.settings.venueName.split(' ')[0];
@@ -3295,7 +3156,6 @@
                     </div>
                 `;
             }
-            // == END: FUNGSI DIPERBARUI ==
             
             viewTicket(ticketId) {
                 const ticket = this.tickets.find(t => t.id === ticketId);
@@ -3304,9 +3164,7 @@
                 const ticketHTML = this.generateTicketHTML(ticket);
                 document.getElementById('ticketModalContent').innerHTML = ticketHTML;
                 
-                // START: Generate QR Code untuk modal view
                 this.generateQRCodeForTicket(ticket);
-                // END: Generate QR Code
                 
                 const printBtn = document.getElementById('printTicketBtn');
                 const newPrintBtn = printBtn.cloneNode(true);
@@ -3557,7 +3415,7 @@
                 const data = this.reportData;
                 
                 doc.setFontSize(18);
-                doc.text(this.settings.venueName || 'Laporan Ventra App', 14, 22);
+                doc.text(this.settings.venueName || 'Laporan Ventra Pass', 14, 22);
                 doc.setFontSize(12);
                 doc.text(data.title, 14, 30);
                 
